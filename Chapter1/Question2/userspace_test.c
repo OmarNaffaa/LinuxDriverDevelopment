@@ -1,5 +1,4 @@
 /*
- * ch1/miscdrv_rdwr/rdwr_test_secret.c
  ***************************************************************
  * This program is part of the source code released for the book
  *  "Linux Kernel Programming (Part 2)"
@@ -7,18 +6,10 @@
  *  Publisher:  Packt
  *  GitHub repository:
  *  https://github.com/PacktPublishing/Linux-Kernel-Programming-Part-2
- *
- * From: Ch 1 : Writing a Simple Misc Character Device Driver
- ****************************************************************
- * Brief Description:
- * A simple test bed for the miscdrv_rdwr demo driver; a small user space app
- * to issue the read(2) and write(2) system calls upon a given (device) file.
- * Also, again as a demo, we use the read(2) to retreive the 'secret' <eye-roll>
- * from the driver within kernel-space. Equivalently, one can use the write(2)
- * change the 'secret' (just plain text).
- *
  * For details, please refer the book, Ch 1.
  * License: Dual MIT/GPL
+ *
+ * Description: Simple userspace testbed to test "convertdrv.c"
  */
 #include <stdio.h>
 #include <unistd.h>
@@ -29,8 +20,7 @@
 #include <fcntl.h>
 #include <stdlib.h>
 
-#define MAXBYTES    128		/* Must match the driver; we should actually use a
-				 * common header file for things like this */
+#define MAXBYTES 5
 static int stay_alive;
 
 static inline void usage(char *prg)
